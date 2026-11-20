@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Transaction extends Model
 {
     /**
+     * Gunakan tabel invoices karena transaksi disimpan di sana.
+     *
+     * @var string
+     */
+    protected $table = 'invoices';
+
+    /**
      * fillable
      *
      * @var array
@@ -29,7 +36,7 @@ class Transaction extends Model
     /**
      * transactionDetails
      *
-     * @return void
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function transactionDetails()
     {
@@ -39,7 +46,7 @@ class Transaction extends Model
     /**
      * shipping
      *
-     * @return void
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function shipping()
     {
@@ -49,7 +56,7 @@ class Transaction extends Model
     /**
      * customer
      *
-     * @return void
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function customer()
     {

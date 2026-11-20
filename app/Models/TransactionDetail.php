@@ -21,7 +21,7 @@ class TransactionDetail extends Model
     /**
      * product
      *
-     * @return void
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function product()
     {
